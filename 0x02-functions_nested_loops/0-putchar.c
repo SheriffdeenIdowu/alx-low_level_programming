@@ -1,20 +1,21 @@
-#include <unistd.h>
-#include<stdout>
+#include "main.h"
 
 /**
- * main - print the result
- *
- *
- *     * Return: On success 1.
- *
- *      * On error, -1 is returned, and errno is set appropriately.
- *
- *       */
+  * main - prints the string "main"
+  *
+  * Return: 0 on success.
+  */
 
-int _putchar(char c)
-
+int main(void)
 {
+	char *str;
+	int i;
 
-		return (write(1, &c, 1));
-
+	str = "Holberton";
+	for (i = 0; i < 9; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
+	return (0);
 }
