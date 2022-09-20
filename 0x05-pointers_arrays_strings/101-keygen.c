@@ -1,32 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-/** 
- *main- genrate password
- *Return:nothing
+/**
+ * main - the program generate a 9 digits of random number as password
+ * @n: a random number
+ * @sum: a array of floor string that cover all alphabet character.
+ * @i: a char array index.
+ *
+ * Return: return 0.
  */
+
 int main(void)
 {
-srand((unsigned int)time(NULL));
-char pass[13];
-int i;
+	int i, n;
+	unsigned long int sum;
+	char password[100];
 
-
-for (i = 0; i < 4; i++)
-{
-
-pass[3 * i] = '0' + (rand() % 10);
-char capLetter = 'A' + (rand() % 26);
-
-pass[(3 * i) + 1] = capLetter;
-char letter = 'a' + (rand() % 26);
-
-pass[(3 * i) + 2] = letter;
-}
-pass[3 * i] = '\0';
-printf("generated password : %s\n\n", pass);
-
-printf("\n\n");
-return (0);
+	n = i = sum = 0;
+	char al[63] = "0123456789ABCDEFGHIJKLNMOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	srand(time(NULL));
+	while (sum < (2772 - 122))
+	{
+		n = rand() % 62;
+		password[i] = al[n];
+		sum = sum + password[i];
+		i++;
+	}
+	n = 2772 - sum;
+	password[i] = n;
+	password[++i] = '\0';
+	printf("%s\n", password);
+	return (0);
 }
