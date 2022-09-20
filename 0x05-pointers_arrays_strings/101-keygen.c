@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include "main.h"
 
 /**
  * main - the program generate a 9 digits of random number as password
